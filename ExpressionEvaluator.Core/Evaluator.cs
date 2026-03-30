@@ -5,6 +5,7 @@ public class Evaluator
     public static double Evaluate(string infix)
     {
         var postfix = InfixToPostfix(infix);
+        Console.WriteLine("Postfix: " + postfix); // Agregamos esta línea para mostrar la expresión en postfix
         return EvaluatePostfix(postfix);
     }
 
@@ -12,9 +13,24 @@ public class Evaluator
     {
         var postFix = string.Empty;
         var stack = new Stack<char>();
-        foreach (var item in infix)
+
+        for (int i = 0; i < infix.Length; i++)
         {
-            if (IsOperator(item))
+            char item = infix[i];
+
+            // Manejo de números (incluye decimales)
+            if (char.IsDigit(item) || item == '.')
+            {
+                while (i < infix.Length && (char.IsDigit(infix[i]) || infix[i] == '.'))
+                {
+                    postFix += infix[i];
+                    i++;
+                }
+
+                postFix += " ";
+                i--;
+            }
+            else if (IsOperator(item))
             {
                 if (stack.Count == 0)
                 {
@@ -24,35 +40,37 @@ public class Evaluator
                 {
                     if (item == ')')
                     {
-                        do
+                        while (stack.Peek() != '(')
                         {
-                            postFix += stack.Pop();
-                        } while (stack.Peek() != '(');
+                            postFix += stack.Pop() + " ";
+                        }
                         stack.Pop();
                     }
                     else
                     {
-                        if (PriorityInfix(item) > PriorityStack(stack.Peek()))
+                        if (item == '(')
+                        {
+                            stack.Push(item);
+                        }
+                        else if (PriorityInfix(item) > PriorityStack(stack.Peek()))
                         {
                             stack.Push(item);
                         }
                         else
                         {
-                            postFix += stack.Pop();
+                            postFix += stack.Pop() + " ";
                             stack.Push(item);
                         }
                     }
                 }
             }
-            else
-            {
-                postFix += item;
-            }
         }
+
         while (stack.Count > 0)
         {
-            postFix += stack.Pop();
+            postFix += stack.Pop() + " ";
         }
+
         return postFix;
     }
 
@@ -81,13 +99,16 @@ public class Evaluator
     private static double EvaluatePostfix(string postfix)
     {
         var stack = new Stack<double>();
-        foreach (char item in postfix)
+        var tokens = postfix.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+        foreach (var token in tokens)
         {
-            if (IsOperator(item))
+            if (token.Length == 1 && IsOperator(token[0]))
             {
                 var b = stack.Pop();
                 var a = stack.Pop();
-                stack.Push(item switch
+
+                stack.Push(token[0] switch
                 {
                     '+' => a + b,
                     '-' => a - b,
@@ -99,11 +120,11 @@ public class Evaluator
             }
             else
             {
-                stack.Push(double.Parse(item.ToString()));
+                stack.Push(double.Parse(token, System.Globalization.CultureInfo.InvariantCulture)); //agregamos InvariantCulture para asegurar que el punto decimal se interprete correctamente
             }
         }
+
         return stack.Pop();
     }
-
     private static bool IsOperator(char item) => "+-*/^()".Contains(item);
 }
