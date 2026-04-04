@@ -321,6 +321,7 @@
             AutoScaleDimensions = new SizeF(6F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 64, 64);
+            BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(515, 427);
             Controls.Add(txtResult);
             Controls.Add(button21);
@@ -346,11 +347,13 @@
             Controls.Add(button1);
             Controls.Add(txtDisplay);
             Font = new Font("Impact", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FormBorderStyle = FormBorderStyle.Fixed3D;
+            ForeColor = Color.Black;
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Functions Evaluator {¼±%]";
+            TransparencyKey = Color.Black;
             Load += Form1_Load;
+            KeyDown += Form1_KeyDown;
             ResumeLayout(false);
             PerformLayout();
         }
