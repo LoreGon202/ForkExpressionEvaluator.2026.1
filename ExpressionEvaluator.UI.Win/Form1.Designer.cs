@@ -57,6 +57,7 @@
             // 
             txtDisplay.BackColor = Color.FromArgb(192, 255, 255);
             txtDisplay.Font = new Font("Times New Roman", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtDisplay.ForeColor = Color.FromArgb(0, 0, 192);
             txtDisplay.Location = new Point(28, 12);
             txtDisplay.Margin = new Padding(3, 4, 3, 4);
             txtDisplay.Name = "txtDisplay";
@@ -67,6 +68,7 @@
             // button1
             // 
             button1.Font = new Font("Impact", 14.25F);
+            button1.ForeColor = Color.Navy;
             button1.Location = new Point(28, 298);
             button1.Name = "button1";
             button1.Size = new Size(90, 49);
@@ -78,6 +80,7 @@
             // button2
             // 
             button2.Font = new Font("Impact", 14.25F);
+            button2.ForeColor = Color.Navy;
             button2.Location = new Point(124, 298);
             button2.Name = "button2";
             button2.Size = new Size(90, 49);
@@ -89,6 +92,7 @@
             // button3
             // 
             button3.Font = new Font("Impact", 14.25F);
+            button3.ForeColor = Color.Navy;
             button3.Location = new Point(220, 298);
             button3.Name = "button3";
             button3.Size = new Size(90, 49);
@@ -100,6 +104,7 @@
             // button4
             // 
             button4.Font = new Font("Impact", 14.25F);
+            button4.ForeColor = Color.Navy;
             button4.Location = new Point(28, 243);
             button4.Name = "button4";
             button4.Size = new Size(90, 49);
@@ -111,6 +116,7 @@
             // button5
             // 
             button5.Font = new Font("Impact", 14.25F);
+            button5.ForeColor = Color.Navy;
             button5.Location = new Point(124, 243);
             button5.Name = "button5";
             button5.Size = new Size(90, 49);
@@ -122,6 +128,7 @@
             // button6
             // 
             button6.Font = new Font("Impact", 14.25F);
+            button6.ForeColor = Color.Navy;
             button6.Location = new Point(220, 243);
             button6.Name = "button6";
             button6.Size = new Size(90, 49);
@@ -133,6 +140,7 @@
             // button7
             // 
             button7.Font = new Font("Impact", 14.25F);
+            button7.ForeColor = Color.Navy;
             button7.Location = new Point(28, 185);
             button7.Name = "button7";
             button7.Size = new Size(90, 49);
@@ -144,6 +152,7 @@
             // button8
             // 
             button8.Font = new Font("Impact", 14.25F);
+            button8.ForeColor = Color.Navy;
             button8.Location = new Point(124, 185);
             button8.Name = "button8";
             button8.Size = new Size(90, 49);
@@ -155,6 +164,7 @@
             // button9
             // 
             button9.Font = new Font("Impact", 14.25F);
+            button9.ForeColor = Color.Navy;
             button9.Location = new Point(220, 185);
             button9.Name = "button9";
             button9.Size = new Size(90, 49);
@@ -166,6 +176,7 @@
             // button10
             // 
             button10.Font = new Font("Impact", 14.25F);
+            button10.ForeColor = Color.Navy;
             button10.Location = new Point(124, 353);
             button10.Name = "button10";
             button10.Size = new Size(90, 49);
@@ -177,6 +188,7 @@
             // button11
             // 
             button11.Font = new Font("Impact", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button11.ForeColor = Color.Navy;
             button11.Location = new Point(220, 353);
             button11.Name = "button11";
             button11.Size = new Size(90, 49);
@@ -189,6 +201,7 @@
             // 
             button12.BackColor = Color.FromArgb(255, 255, 192);
             button12.Font = new Font("Impact", 14.25F);
+            button12.ForeColor = Color.Navy;
             button12.Location = new Point(316, 353);
             button12.Name = "button12";
             button12.Size = new Size(90, 49);
@@ -201,6 +214,7 @@
             // 
             button13.BackColor = Color.FromArgb(255, 255, 192);
             button13.Font = new Font("Impact", 14.25F);
+            button13.ForeColor = Color.Navy;
             button13.Location = new Point(316, 298);
             button13.Name = "button13";
             button13.Size = new Size(90, 49);
@@ -213,6 +227,7 @@
             // 
             button14.BackColor = Color.FromArgb(255, 255, 192);
             button14.Font = new Font("Impact", 14.25F);
+            button14.ForeColor = Color.Navy;
             button14.Location = new Point(316, 185);
             button14.Name = "button14";
             button14.Size = new Size(90, 49);
@@ -225,6 +240,7 @@
             // 
             button15.BackColor = Color.FromArgb(255, 255, 192);
             button15.Font = new Font("Impact", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button15.ForeColor = Color.Navy;
             button15.Location = new Point(316, 243);
             button15.Name = "button15";
             button15.Size = new Size(90, 49);
@@ -237,6 +253,7 @@
             // 
             button16.BackColor = Color.FromArgb(255, 192, 128);
             button16.Font = new Font("Impact", 14.25F);
+            button16.ForeColor = Color.Navy;
             button16.Location = new Point(316, 130);
             button16.Name = "button16";
             button16.Size = new Size(90, 49);
@@ -249,6 +266,7 @@
             // 
             button17.BackColor = Color.FromArgb(255, 192, 128);
             button17.Font = new Font("Impact", 14.25F);
+            button17.ForeColor = Color.Navy;
             button17.Location = new Point(124, 130);
             button17.Name = "button17";
             button17.Size = new Size(90, 49);
@@ -261,6 +279,7 @@
             // 
             button18.BackColor = Color.FromArgb(255, 192, 128);
             button18.Font = new Font("Impact", 14.25F);
+            button18.ForeColor = Color.Navy;
             button18.Location = new Point(216, 130);
             button18.Name = "button18";
             button18.Size = new Size(90, 49);
@@ -273,6 +292,7 @@
             // 
             button19.BackColor = Color.FromArgb(0, 192, 0);
             button19.Font = new Font("Impact", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button19.ForeColor = Color.Navy;
             button19.Location = new Point(412, 130);
             button19.Name = "button19";
             button19.Size = new Size(90, 272);
@@ -283,9 +303,9 @@
             // 
             // button20
             // 
-            button20.BackColor = SystemColors.ActiveCaptionText;
+            button20.BackColor = SystemColors.ActiveCaption;
             button20.Font = new Font("Impact", 14.25F);
-            button20.ForeColor = Color.Red;
+            button20.ForeColor = Color.Navy;
             button20.Location = new Point(28, 130);
             button20.Name = "button20";
             button20.Size = new Size(90, 49);
@@ -296,8 +316,9 @@
             // 
             // button21
             // 
-            button21.BackColor = Color.FromArgb(128, 128, 255);
+            button21.BackColor = Color.Red;
             button21.Font = new Font("Impact", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button21.ForeColor = Color.Navy;
             button21.Location = new Point(28, 353);
             button21.Name = "button21";
             button21.Size = new Size(90, 49);
@@ -310,6 +331,7 @@
             // 
             txtResult.BackColor = Color.FromArgb(192, 192, 0);
             txtResult.Font = new Font("Times New Roman", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtResult.ForeColor = Color.FromArgb(0, 0, 192);
             txtResult.Location = new Point(28, 63);
             txtResult.Name = "txtResult";
             txtResult.Size = new Size(474, 50);

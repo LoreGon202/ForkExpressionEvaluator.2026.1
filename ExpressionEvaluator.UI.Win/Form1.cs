@@ -61,6 +61,18 @@ namespace ExpressionEvaluator.UI.Win
 
                 int cursorPosition = txtDisplay.SelectionStart;
 
+                // Multiplicación implícita: número seguido de '('
+                if (value == "(" && expression.Length > 0)
+                {
+                    char lastChar = expression[cursorPosition - 1];
+
+                    if (char.IsDigit(lastChar) || lastChar == ')')
+                    {
+                        expression = expression.Insert(cursorPosition, "*");
+                        cursorPosition++;
+                    }
+                }
+
                 expression = expression.Insert(cursorPosition, value);
 
                 txtDisplay.Text = expression;
@@ -104,7 +116,18 @@ namespace ExpressionEvaluator.UI.Win
                     return;
                 }
 
-                var result = Evaluator.Evaluate(txtDisplay.Text);
+                string evalExpression = txtDisplay.Text;
+
+                // corregir negativos
+                if (evalExpression.StartsWith("-"))
+                {
+                    evalExpression = "0" + evalExpression;
+                }
+
+                evalExpression = evalExpression.Replace("(-", "(0-");
+
+                var result = Evaluator.Evaluate(evalExpression);
+
                 txtResult.Text = result.ToString();
                 expression = "";
             }
@@ -150,7 +173,7 @@ namespace ExpressionEvaluator.UI.Win
             // lo que causaría un error, es decir el boton delete no funcionara dentro del resultado de una operación
             if (!string.IsNullOrEmpty(expression) && expression.Length > 0)
             {
-                expression = expression.Remove(cursorPosition - 1, 1);
+               expression = expression.Remove(cursorPosition - 1, 1);
                 txtDisplay.Text = expression;
                 txtDisplay.SelectionStart = cursorPosition - 1;
             }
@@ -164,11 +187,11 @@ namespace ExpressionEvaluator.UI.Win
         {
             if (e.KeyCode == Keys.Enter)
             {
-                btnEqual_Click(null, null);
+                btnEqual_Click(this, EventArgs.Empty);
             }
             else if (e.KeyCode == Keys.Back)
             {
-                btnDelete_Click(null, null);
+                btnDelete_Click(this, EventArgs.Empty);
             }
         }
     }
