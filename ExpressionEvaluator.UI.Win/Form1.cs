@@ -150,17 +150,17 @@ namespace ExpressionEvaluator.UI.Win
             txtDisplay.Text = "";
             txtResult.Text = "";
         }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            //mantiene el foco en el display dodne el usuario coloque el cursor para
-            //gresar o corregir un dato
+            //mantiene el foco en el display donde el usuario coloque el cursor para
+            //agresar o corregir un dato
             txtDisplay.Focus();
             expression = txtDisplay.Text;
 
             if (txtResult.Text == "Error")
             {
                 txtResult.Text = "";
+
             }
 
             //ellimina el caracter a la izquierda del cursor,
